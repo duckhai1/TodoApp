@@ -77,6 +77,8 @@ services:
       - 8888:8080
     networks:
       - my_network
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
     deploy:
       placement:
         constraints: [node.role == manager]
