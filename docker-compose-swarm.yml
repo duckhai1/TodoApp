@@ -30,7 +30,7 @@ services:
     build:
       context: dockerBackend
       dockerfile: Dockerfile
-    image: api_server:latest
+    image: duckhai1/api_server:latest
     ports: 
       - 8080:8080
     networks:
@@ -55,7 +55,7 @@ services:
         - APP_ENV=development
       context: dockerFrontendAngular
       dockerfile: Dockerfile
-    image: todo_app:latest
+    image: duckhai1/todo_app:latest
     ports: 
       - 4200:80
     networks:
