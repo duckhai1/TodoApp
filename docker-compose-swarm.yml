@@ -33,7 +33,7 @@ services:
     networks:
       - my_network
     environment:
-      - MYSQL_HOST=todoapp_docker_db
+      - MYSQL_HOST=docker_db
     depends_on:
       - docker_db
     deploy:
