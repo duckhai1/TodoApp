@@ -9,8 +9,8 @@ services:
     networks:
       - my_network
     volumes:
-      - $PWD/mount/mysql:/var/lib/mysql
-      # - todo_db:/var/lib/mysql
+      # - $PWD/mount/mysql:/var/lib/mysql
+      - todo_db:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=rootpassword
       - MYSQL_USER=user
@@ -88,4 +88,3 @@ networks:
 
 volumes:
   todo_db:
-  visualizer_db:
