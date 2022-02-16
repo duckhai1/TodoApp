@@ -60,7 +60,7 @@ services:
     depends_on:
       - api_server
     environment:
-      - BACKEND_API_URL=192.168.0.26
+      - BACKEND_API_URL=host.docker.internal
       - BACKEND_API_PORT=8080
     deploy:
       replicas: 1
@@ -78,7 +78,7 @@ services:
     networks:
       - my_network
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - //var/run/docker.sock://var/run/docker.sock
     deploy:
       placement:
         constraints: [node.role == manager]
