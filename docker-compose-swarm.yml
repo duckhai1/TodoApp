@@ -27,7 +27,7 @@ services:
     build:
       context: dockerBackend
       dockerfile: Dockerfile
-    image: duckhai1/api_server:2.0
+    image: duckhai1/api_server:latest
     ports: 
       - 8080:8080
     networks:
