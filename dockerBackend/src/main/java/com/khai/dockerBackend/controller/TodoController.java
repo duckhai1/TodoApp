@@ -19,7 +19,6 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
-@CrossOrigin
 public class TodoController {
 
     private final TodoService todoService;
