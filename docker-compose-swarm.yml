@@ -68,7 +68,7 @@ services:
         parallelism: 2
         delay: 10s
       restart_policy:
-        condition: on-failure
+        condition: always
         delay: 10s
         max_attempts: 3
   visualizer:
