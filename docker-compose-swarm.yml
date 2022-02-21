@@ -8,13 +8,16 @@ services:
       - 3306:3306
     networks:
       - my_network
+    secrets:
+      - mysql_pass
+      - mysql_user
     volumes:
       # - $PWD/mount/mysql:/var/lib/mysql
       - todo_db:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=rootpassword
-      - MYSQL_USER=user
-      - MYSQL_PASSWORD=password
+      - MYSQL_USER_FILE=/run/secrets/mysql_user
+      - MYSQL_PASSWORD_FILE=/run/secrets/mysql_pass
       - MYSQL_DATABASE=my_db
     deploy:
       replicas: 1
@@ -85,6 +88,12 @@ services:
 networks:
     my_network:
         driver: overlay
+
+secrets:
+  mysql_user:
+    file: ./secrets/mysql_user.txt
+  mysql_pass:
+    file: ./secrets/mysql_pass.txt
 
 volumes:
   todo_db:
