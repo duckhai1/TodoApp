@@ -17,5 +17,5 @@ COPY --from=builder /app/dist/docker-frontend-angular /usr/share/nginx/html
 COPY ./entryPoint.sh /
 RUN chmod +x entryPoint.sh
 
-ENTRYPOINT ["/entryPoint.sh"]
+ENTRYPOINT ["sh", "/entryPoint.sh"]
 CMD ["nginx", "-g", "daemon off;"]

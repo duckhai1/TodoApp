@@ -20,7 +20,7 @@ services:
   api_server:
     build:
       context: dockerBackend
-      dockerfile: Dockerfile
+      dockerfile: jar.Dockerfile
     image: api_server:latest
     ports: 
       - 8080:8080
