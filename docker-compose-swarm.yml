@@ -63,7 +63,7 @@ services:
     depends_on:
       - api_server
     environment:
-      - BACKEND_API_URL=host.docker.internal
+      - BACKEND_API_URL=localhost
       - BACKEND_API_PORT=8080
     deploy:
       replicas: 1
